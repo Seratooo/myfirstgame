@@ -644,6 +644,7 @@ function sair(){
 function recomecar(){
   for(let i=1; i<InSpaceShipe.length;i++){
     InSpaceShipe[i].isColision = false;
+    InSpaceShipe[i].colision=0;
     scene.add(InSpaceShipe[i].spaceShipe)
   }
 
