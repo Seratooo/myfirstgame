@@ -89,7 +89,7 @@ var aceleration = 0
 
  const InSpaceShipeModel1 = {
   spaceShipe: inSpaceShipe(0x11dfff,0x00ff00),
-  isColision: false,
+  isColision: true,
   randomPosition: Math.ceil(getRandomArbitrary(-50, 50)),
   velocity: getRandomvelocity(1,2)/2,
   position: 0,
@@ -150,6 +150,15 @@ position: 0,
 colision: 0,
 index: 6
 }
+const InSpaceShipeModel8 = {
+  spaceShipe: inSpaceShipe(0x11dfff,0x00ff00),
+  iscColision: false,
+  randomPosition: Math.ceil(getRandomArbitrary(-50, 50)),
+  velocity: getRandomvelocity(1,2)/2,
+  position: 0,
+  colision: 0,
+  index: 7
+}
  const InSpaceShipe = [
      InSpaceShipeModel1,
      InSpaceShipeModel2,
@@ -157,17 +166,20 @@ index: 6
      InSpaceShipeModel4,
      InSpaceShipeModel5,
      InSpaceShipeModel6,
-     InSpaceShipeModel7
+     InSpaceShipeModel7,
+     InSpaceShipeModel8
  ]
  
- InSpaceShipe[0].spaceShipe.position.set(10,0,-15)
+ InSpaceShipe[0].spaceShipe.position.set(0,0,-15)
  InSpaceShipe[1].spaceShipe.position.set(20,0,-15)
  InSpaceShipe[2].spaceShipe.position.set(40,0,-15)
  InSpaceShipe[3].spaceShipe.position.set(50,0,-15)
  InSpaceShipe[4].spaceShipe.position.set(-10,0,-15)
  InSpaceShipe[5].spaceShipe.position.set(-20,0,-15)
  InSpaceShipe[6].spaceShipe.position.set(-30,0,-15)
-  
+ InSpaceShipe[7].spaceShipe.position.set(10,0,-15)
+
+ scene.remove(InSpaceShipe[0].spaceShipe)
  //AS PAREDES
 //  const BoxLeft = box(1,5,30,1,1,1,0x077777)
 //  BoxLeft.position.set(-100.00,0.00,0.00)
@@ -456,6 +468,23 @@ function RandomMove7(InSpaceShipe0){
   }
 
 }
+function RandomMove8(InSpaceShipe0){
+  
+  InSpaceShipe0.position = InSpaceShipe0.spaceShipe.position.x;
+  if(InSpaceShipe0.position != InSpaceShipe0.randomPosition){
+    if(InSpaceShipe0.randomPosition>InSpaceShipe0.position){
+      InSpaceShipe0.spaceShipe.position.x += 0.5 //getRandomvelocity(1,2)/2
+      InSpaceShipe0.position++
+    }else{
+      InSpaceShipe0.spaceShipe.position.x -= 0.5 //getRandomvelocity(1,2)/2
+      InSpaceShipe0.position--
+    }
+  }else{
+    InSpaceShipe0.randomPosition = Math.ceil(getRandomArbitrary(-50, 50))
+    InSpaceShipe0.position=0;
+  }
+
+}
 
 function detectCollisions(){
   let obj1;
@@ -625,6 +654,7 @@ var update = function(){
      if(InSpaceShipe[4]) RandomMove5(InSpaceShipe[4])
      if(InSpaceShipe[5]) RandomMove6(InSpaceShipe[5])
      if(InSpaceShipe[6]) RandomMove7(InSpaceShipe[6])
+     if(InSpaceShipe[7]) RandomMove7(InSpaceShipe[7])
      
      detectCollisions()
      //camera5.rotation.x +=0.08
