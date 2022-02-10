@@ -615,13 +615,13 @@ var update = function(){
      window.addEventListener('keyup',handleKeyUp)
      checkGameKeys()
     
-    //  if(InSpaceShipe[0]) RandomMove1(InSpaceShipe[0])
-    //  if(InSpaceShipe[1]) RandomMove2(InSpaceShipe[1])
-    //  if(InSpaceShipe[2]) RandomMove3(InSpaceShipe[2])
-    //  if(InSpaceShipe[3]) RandomMove4(InSpaceShipe[3])
-    //  if(InSpaceShipe[4]) RandomMove5(InSpaceShipe[4])
-    //  if(InSpaceShipe[5]) RandomMove6(InSpaceShipe[5])
-    //  if(InSpaceShipe[6]) RandomMove7(InSpaceShipe[6])
+     if(InSpaceShipe[0]) RandomMove1(InSpaceShipe[0])
+     if(InSpaceShipe[1]) RandomMove2(InSpaceShipe[1])
+     if(InSpaceShipe[2]) RandomMove3(InSpaceShipe[2])
+     if(InSpaceShipe[3]) RandomMove4(InSpaceShipe[3])
+     if(InSpaceShipe[4]) RandomMove5(InSpaceShipe[4])
+     if(InSpaceShipe[5]) RandomMove6(InSpaceShipe[5])
+     if(InSpaceShipe[6]) RandomMove7(InSpaceShipe[6])
      
      detectCollisions()
      //camera5.rotation.x +=0.08
