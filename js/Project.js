@@ -577,7 +577,6 @@ function detectCollisions2(SphereFirtBangShot){
 
 }
 
-
 function moveBomb() {
  
   for(let i = 0; i < SphereFirtBangShot.length; i++){
@@ -709,6 +708,7 @@ var update = function(){
      render()
    }
    Gameloop()
+
 
 function box (width,height,depth,widthSegments,heightSegments,depthSegments, color,isAllMaterial){
   const geometry = new THREE.BoxGeometry(width,height,depth,widthSegments,heightSegments,depthSegments)
