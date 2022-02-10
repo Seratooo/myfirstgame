@@ -621,24 +621,32 @@ function moveBomb() {
       SphereFirtBangShot[i].friction2 = -0.012
    }
 
-   console.log(Pontuacao+ "P"+InSpaceShipe.length)
+
    if(Pontuacao === InSpaceShipe.length){
     const Banner = document.querySelector('.end');
     Banner.style.display = 'flex';
 
     const EndBtn = document.querySelector('.endbtn')
     EndBtn.addEventListener('click',recomecar)
+
+    const EndBtn2 = document.querySelector('.endbtn2')
+    EndBtn2.addEventListener('click',sair)
    }
     
   }
   
+}
+function sair(){
+  const Banner = document.querySelector('.end');
+  Banner.style.display = 'none';
+  Pontuacao=1;
 }
 function recomecar(){
   for(let i=1; i<InSpaceShipe.length;i++){
     InSpaceShipe[i].isColision = false;
     scene.add(InSpaceShipe[i].spaceShipe)
   }
-  
+
   InSpaceShipe[0].isColision = false;
   Pontuacao=1;
   const Banner = document.querySelector('div.end');
