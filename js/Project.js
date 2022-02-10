@@ -178,7 +178,7 @@ const InSpaceShipeModel8 = {
  InSpaceShipe[5].spaceShipe.position.set(-20,0,-15)
  InSpaceShipe[6].spaceShipe.position.set(-30,0,-15)
  InSpaceShipe[7].spaceShipe.position.set(10,0,-15)
-
+ 
  scene.remove(InSpaceShipe[0].spaceShipe)
  //AS PAREDES
 //  const BoxLeft = box(1,5,30,1,1,1,0x077777)
@@ -198,7 +198,7 @@ const InSpaceShipeModel8 = {
 //  BoxBase.position.set(0.00,-5.00,0.00)
 //  BoxBase.scale.set(200.00,0.00,2.00)
 //  BoxBase.rotation.set(210.48,0.00,0.00)
-
+var Pontuacao = 1;
 var paredeEsquerdaGeometry = new THREE.BoxGeometry(1, 30, 60);
 
 const texturaParedeEsquerda = new THREE.TextureLoader().load("./images/Mona_Lisa.jpg")
@@ -605,7 +605,7 @@ function moveBomb() {
       //InSpaceShipe[detectCollisions2()].colision++
       if(InSpaceShipe[detectCollisions2(SphereFirtBangShot[i].shot)].colision>30){
          scene.remove(InSpaceShipe[detectCollisions2(SphereFirtBangShot[i].shot)].spaceShipe)
-         //InSpaceShipe.pop(detectCollisions2(SphereFirtBangShot[i].shot))
+         Pontuacao++
          InSpaceShipe[detectCollisions2(SphereFirtBangShot[i].shot)].isColision = true;
         render()
       }
@@ -620,9 +620,29 @@ function moveBomb() {
       SphereFirtBangShot[i].velocityShot2 *= -1;
       SphereFirtBangShot[i].friction2 = -0.012
    }
+
+   console.log(Pontuacao+ "P"+InSpaceShipe.length)
+   if(Pontuacao === InSpaceShipe.length){
+    const Banner = document.querySelector('.end');
+    Banner.style.display = 'flex';
+
+    const EndBtn = document.querySelector('.endbtn')
+    EndBtn.addEventListener('click',recomecar)
+   }
     
   }
   
+}
+function recomecar(){
+  for(let i=1; i<InSpaceShipe.length;i++){
+    InSpaceShipe[i].isColision = false;
+    scene.add(InSpaceShipe[i].spaceShipe)
+  }
+  
+  InSpaceShipe[0].isColision = false;
+  Pontuacao=1;
+  const Banner = document.querySelector('div.end');
+  Banner.style.display = 'none';
 }
 function colisionBomb(SphereFirtBangShot){
   // for(let i = 0; i < SphereFirtBangShot.length; i++){
@@ -653,7 +673,7 @@ var update = function(){
      if(InSpaceShipe[4]) RandomMove5(InSpaceShipe[4])
      if(InSpaceShipe[5]) RandomMove6(InSpaceShipe[5])
      if(InSpaceShipe[6]) RandomMove7(InSpaceShipe[6])
-     if(InSpaceShipe[7]) RandomMove7(InSpaceShipe[7])
+     if(InSpaceShipe[7]) RandomMove8(InSpaceShipe[7])
      
      detectCollisions()
      //camera5.rotation.x +=0.08

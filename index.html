@@ -47,6 +47,42 @@
       border-radius: 5px;
       box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.73);
     }
+    .endbtn{
+      background: rgb(98, 20, 132);
+      color: white;
+      padding: 30px 20px;
+      font-size: 2rem;
+      width: 400px;
+      cursor: pointer;
+      text-align: center;
+      border: none;
+      margin: 60px 0;
+      border-radius: 5px;
+      box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.73);
+    }
+    .end{
+      position: absolute;
+      top: 0%;
+      width: 100%;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(14, 0, 8, 0.885);
+      height: 100%;
+      transition: 5s;
+    }
+    .end h1{
+      font-size: 5rem;
+      font-weight: 700;
+      color: aliceblue;
+      text-shadow: #474747 3px 5px 2px;
+    }
+    .end strong{
+      font-size: 10rem;
+      text-shadow: #353535 3px 5px 2px;
+      color: aliceblue;
+    }
 
   </style>
 </head>
@@ -56,6 +92,12 @@
     <h1>Bem-vindo ao Jogo</h1>
     <strong>SPACEWAR</strong>
     <div class="start">Começar</div>
+  </div>
+  
+  <div class="end">
+    <h1>Fim ao Jogo</h1>
+    <strong>SPACEWAR</strong>
+    <div class="endbtn">Recomeçar</div>
   </div>
 
   <script>
