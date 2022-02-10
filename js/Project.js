@@ -553,7 +553,6 @@ function moveBomb() {
  
   for(let i = 0; i < SphereFirtBangShot.length; i++){
     
-    console.log(Math.round(SphereFirtBangShot[i].velocityShot))
       if(Math.round(SphereFirtBangShot[i].velocityShot) == -0){
        SphereFirtBangShot[i].friction = 0
        SphereFirtBangShot[i].velocityShot = 0
@@ -577,7 +576,6 @@ function moveBomb() {
     if(detectCollisions2(SphereFirtBangShot[i].shot)){
       //InSpaceShipe[detectCollisions2()].colision++
       if(InSpaceShipe[detectCollisions2(SphereFirtBangShot[i].shot)].colision>30){
-         console.log('Colidiu'+ InSpaceShipe[detectCollisions2(SphereFirtBangShot[i].shot)].colision )
          scene.remove(InSpaceShipe[detectCollisions2(SphereFirtBangShot[i].shot)].spaceShipe)
          //InSpaceShipe.pop(detectCollisions2(SphereFirtBangShot[i].shot))
          InSpaceShipe[detectCollisions2(SphereFirtBangShot[i].shot)].isColision = true;
@@ -1165,7 +1163,7 @@ function key(x){
 function checkGameKeys(){ 
   if (key(38)){
     //Arrow
-    if(Math.ceil(MainSpaceShip.position.z) === 10){
+    if(Math.ceil(MainSpaceShip.position.z) === 11){
       //* aceleration;
     }else{
       MainSpaceShip.position.z += -0.4 
