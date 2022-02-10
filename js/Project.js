@@ -12,7 +12,7 @@ const camera5 = new THREE.PerspectiveCamera(75, window.innerWidth / window.inner
 const camera6 = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000) //Perspective cam
 const camera7 = new THREE.OrthographicCamera(window.innerWidth / -60, window.innerWidth / 60, window.innerHeight / 60, window.innerHeight / -60, 0.1, 1000) //Orthographic Rigth
 
-camera1.position.z = 46; camera1.position.y = 6
+camera1.position.z = 38; camera1.position.y = 6
 camera2.position.y = 180
 camera3.position.z = 10; camera3.position.y = 9.8; camera3.position.x = 10
 camera4.position.x = 5; camera4.position.y = 0.8; camera4.position.z = 0
@@ -20,6 +20,7 @@ camera5.position.z = 40; camera5.position.y = 30; camera5.position.x = 20;
 camera6.position.z = 0; camera6.position.y = 50; camera6.position.x = 0;
 camera7.position.z = 30; camera7.position.y = 1; camera7.position.x = 0;
 
+const positionMainCamara = 0.35;
 
 const renderer1 = new THREE.WebGLRenderer()
 renderer1.setSize(window.innerWidth, window.innerHeight)
@@ -89,7 +90,7 @@ var aceleration = 0
  const InSpaceShipeModel1 = {
   spaceShipe: inSpaceShipe(0x11dfff,0x00ff00),
   isColision: false,
-  randomPosition: Math.ceil(getRandomArbitrary(-90, 90)),
+  randomPosition: Math.ceil(getRandomArbitrary(-50, 50)),
   velocity: getRandomvelocity(1,2)/2,
   position: 0,
   colision: 0,
@@ -98,7 +99,7 @@ var aceleration = 0
 const InSpaceShipeModel2 = {
 spaceShipe: inSpaceShipe(0xff8450,0xff01ff),
 isColision: false,
-randomPosition: Math.ceil(getRandomArbitrary(-90, 90)),
+randomPosition: Math.ceil(getRandomArbitrary(-50, 50)),
 velocity: getRandomvelocity(1,2)/2,
 position: 0,
 colision: 0,
@@ -107,7 +108,7 @@ index: 1
 const InSpaceShipeModel3 = {
 spaceShipe: inSpaceShipe(0x668450,0x0001ff),
 isColision: false,
-randomPosition: Math.ceil(getRandomArbitrary(-90, 90)),
+randomPosition: Math.ceil(getRandomArbitrary(-50, 50)),
 velocity: getRandomvelocity(1,2)/2,
 position: 0,
 colision: 0,
@@ -116,7 +117,7 @@ index: 2
 const InSpaceShipeModel4 = {
 spaceShipe: inSpaceShipe(0xabcdef,0xfedcba),
 isColision: false,
-randomPosition: Math.ceil(getRandomArbitrary(-90, 90)),
+randomPosition: Math.ceil(getRandomArbitrary(-50, 50)),
 velocity: getRandomvelocity(1,2)/2,
 position: 0,
 colision: 0,
@@ -125,7 +126,7 @@ index: 3
 const InSpaceShipeModel5 = {
 spaceShipe: inSpaceShipe(0x987654,0x456789),
 isColision: false,
-randomPosition: Math.ceil(getRandomArbitrary(-90, 90)),
+randomPosition: Math.ceil(getRandomArbitrary(-50, 50)),
 velocity: getRandomvelocity(1,2)/2,
 position: 0,
 colision: 0,
@@ -134,7 +135,7 @@ index: 4
 const InSpaceShipeModel6 = {
 spaceShipe: inSpaceShipe(0x567890,0x12345f),
 isColision: false,
-randomPosition: Math.ceil(getRandomArbitrary(-90, 90)),
+randomPosition: Math.ceil(getRandomArbitrary(-50, 50)),
 velocity: getRandomvelocity(1,2)/2,
 position: 0,
 colision: 0,
@@ -143,7 +144,7 @@ index: 5
 const InSpaceShipeModel7 = {
 spaceShipe: inSpaceShipe(0x777abb,0xfff1ff),
 iscColision: false,
-randomPosition: Math.ceil(getRandomArbitrary(-90, 90)),
+randomPosition: Math.ceil(getRandomArbitrary(-50, 50)),
 velocity: getRandomvelocity(1,2)/2,
 position: 0,
 colision: 0,
@@ -348,7 +349,7 @@ function RandomMove1(InSpaceShipe0){
       InSpaceShipe0.position--
     }
   }else{
-    InSpaceShipe0.randomPosition = Math.ceil(getRandomArbitrary(-90, 90))
+    InSpaceShipe0.randomPosition = Math.ceil(getRandomArbitrary(-50, 50))
     InSpaceShipe0.position=0;
   }
 
@@ -365,7 +366,7 @@ function RandomMove2(InSpaceShipe1){
       InSpaceShipe1.position--
     }
   }else{
-    InSpaceShipe1.randomPosition = Math.ceil(getRandomArbitrary(-90, 90))
+    InSpaceShipe1.randomPosition = Math.ceil(getRandomArbitrary(-50, 50))
     InSpaceShipe1.position=0;
   }
 
@@ -382,7 +383,7 @@ function RandomMove3(InSpaceShipe2){
       InSpaceShipe2.position--
     }
   }else{
-    InSpaceShipe2.randomPosition = Math.ceil(getRandomArbitrary(-90, 90))
+    InSpaceShipe2.randomPosition = Math.ceil(getRandomArbitrary(-50, 50))
     InSpaceShipe2.position=0;
   }
 
@@ -399,7 +400,7 @@ function RandomMove4(InSpaceShipe0){
       InSpaceShipe0.position--
     }
   }else{
-    InSpaceShipe0.randomPosition = Math.ceil(getRandomArbitrary(-90, 90))
+    InSpaceShipe0.randomPosition = Math.ceil(getRandomArbitrary(-50, 50))
     InSpaceShipe0.position=0;
   }
 
@@ -416,7 +417,7 @@ function RandomMove5(InSpaceShipe0){
       InSpaceShipe0.position--
     }
   }else{
-    InSpaceShipe0.randomPosition = Math.ceil(getRandomArbitrary(-90, 90))
+    InSpaceShipe0.randomPosition = Math.ceil(getRandomArbitrary(-50, 50))
     InSpaceShipe0.position=0;
   }
 
@@ -433,7 +434,7 @@ function RandomMove6(InSpaceShipe0){
       InSpaceShipe0.position--
     }
   }else{
-    InSpaceShipe0.randomPosition = Math.ceil(getRandomArbitrary(-90, 90))
+    InSpaceShipe0.randomPosition = Math.ceil(getRandomArbitrary(-50, 50))
     InSpaceShipe0.position=0;
   }
 
@@ -450,7 +451,7 @@ function RandomMove7(InSpaceShipe0){
       InSpaceShipe0.position--
     }
   }else{
-    InSpaceShipe0.randomPosition = Math.ceil(getRandomArbitrary(-90, 90))
+    InSpaceShipe0.randomPosition = Math.ceil(getRandomArbitrary(-50, 50))
     InSpaceShipe0.position=0;
   }
 
@@ -481,10 +482,10 @@ function detectCollisions(){
           //  }
           if(!InSpaceShipe[i].isColision || !InSpaceShipe[j].isColision)
            if(box01.max.x > box02.min.x && box01.min.x < box02.max.x && box01.max.y > box02.min.y && box01.min.y < box02.max.y && box01.max.z > box02.min.z && box01.min.z < box02.max.z){
-              InSpaceShipe[i].randomPosition = Math.ceil(getRandomArbitrary(1, 90))
+              InSpaceShipe[i].randomPosition = Math.ceil(getRandomArbitrary(1, 45))
               InSpaceShipe[i].position = 0
             
-               InSpaceShipe[j].randomPosition = -1 * Math.ceil(getRandomArbitrary(1, 90))
+               InSpaceShipe[j].randomPosition = -1 * Math.ceil(getRandomArbitrary(1, 45))
                InSpaceShipe[j].position = 0
                return true
            }
@@ -552,13 +553,16 @@ function moveBomb() {
  
   for(let i = 0; i < SphereFirtBangShot.length; i++){
     
-      if(SphereFirtBangShot[i].velocityShot === -0.04799999999999925 ){
+    console.log(Math.round(SphereFirtBangShot[i].velocityShot))
+      if(Math.round(SphereFirtBangShot[i].velocityShot) == -0){
        SphereFirtBangShot[i].friction = 0
        SphereFirtBangShot[i].velocityShot = 0
 
        SphereFirtBangShot[i].velocityShot2 = 0;
       SphereFirtBangShot[i].friction2 = 0
+      SphereFirtBangShot[i].life = true;
       scene.remove(SphereFirtBangShot[i].shot)
+
      }
      
 
@@ -569,6 +573,7 @@ function moveBomb() {
     SphereFirtBangShot[i].shot.position.x += SphereFirtBangShot[i].velocityShot2;
 
     //console.log(SphereFirtBangShot[i].velocityShot)
+    if(!SphereFirtBangShot[i].life)
     if(detectCollisions2(SphereFirtBangShot[i].shot)){
       //InSpaceShipe[detectCollisions2()].colision++
       if(InSpaceShipe[detectCollisions2(SphereFirtBangShot[i].shot)].colision>30){
@@ -983,10 +988,11 @@ function Bomb(){
 
   const SphereShot = {
     shot:sphere(1,64,32,6,6,6,6, colorBomb),
-    velocityShot: 1,
+    velocityShot: 2.5,
     velocityShot2: velocityShpere2,
-    friction: 0.004,
+    friction: 0.05,
     friction2: 0,
+    life: false,
   }
 
  // const  SphereFirtBangShot = sphere(1,64,32,6,6,6,6,colorBomb);
@@ -1163,6 +1169,7 @@ function checkGameKeys(){
       //* aceleration;
     }else{
       MainSpaceShip.position.z += -0.4 
+      camera1.position.z -= positionMainCamara;
     }
   }  
   
@@ -1173,6 +1180,7 @@ function checkGameKeys(){
     }else{
       
       MainSpaceShip.position.z += 0.4 //* aceleration;
+      camera1.position.z += positionMainCamara;
     }
   }  
 
@@ -1182,6 +1190,7 @@ function checkGameKeys(){
     if(Math.ceil(MainSpaceShip.position.x)=== 35){ 
     }else{
       MainSpaceShip.position.x += 0.4 //* aceleration;
+      camera1.position.x += positionMainCamara;
     }
   } 
 
@@ -1190,6 +1199,7 @@ function checkGameKeys(){
     if(Math.ceil(MainSpaceShip.position.x)=== -35){ 
     }else{
       MainSpaceShip.position.x -= 0.4 //* aceleration;
+      camera1.position.x -= positionMainCamara;
     }
   }  //A
 }
